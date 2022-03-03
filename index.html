@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Triangles</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    
+    <h3>Function to determine whether a triangle is equilateral, isosceles, or 
+        scalene by giving thee the value of the three sides</h3>
+    
+    <p>Click the button below to input the required values</p>
+    
+    <button onclick="myFunction()">Click me to start</button>
+    
+    <script>
+      function myFunction() {
+        
+        let a = prompt("Enter the value of the 1st side of your triangle", "Side 1");
+        let b = prompt("Enter the value of the 2nd side of your triangle", "Side 2");
+        let c = prompt("Enter the value of the 3rd side of your triangle", "Side 3");
+        let check = isNaN(a, b, c);
+        
+        if(check ==  true) {
+          document.write("Your input is not a triangle.");
+        }
+        
+        else {
+          determineTriangle(a, b, c);
+        }
+      }
+
+      function determineTriangle(a, b, c) {
+        
+        if((a == b) && (a == c) && (b == c)) {
+          window.alert("The triangle is EQUILATERAL.");
+        }
+
+        else {
+         if( ((a  == b) && (a != c)) || ((a  == c) && (a != b)) || ((b  == c) && (b != a)) ) {
+          window.alert("The triangle is ISOSCELES.");
+         }
+          
+         else {
+          window.alert("The triangle is SCALENE.");
+         }
+        }   
+      }
+    </script>
+    
+</body>
+</html>
